@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+[class^=section] {
+  position: relative;
+}
+
+.section1 {
+  background: linear-gradient(#FFFFFF, #EFFAFF);
+  min-height: 400px;
+}
+.section1 header h3 {
+  color: #707070;
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.section1 header nav a {
+  color: #707070;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+}
+.section1 header nav a:hover {
+  border-bottom: 2px solid #F72CA9;
+}
+.section1 article a {
+  text-decoration: none;
+  color: #FFFFFF;
+  background: #21D4E3;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 49px;
+  text-align: center;
+}
+
+.section2 {
+  background: #FFFFFF;
+  min-height: 600px;
+}
+
+.section3 {
+  background: #F4F4F4;
+  padding: 68px 176px 115px;
+}
+.section3 h2 {
+  font-size: 40px;
+  line-height: 23px;
+  color: #4E4E4E;
+  font-weight: 400;
+}
+.section3 .articles-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.section3 article {
+  box-shadow: 1px 1px 2px #c7c7c7;
+  background: #FFFFFF;
+  max-width: 316px;
+}
+.section3 article img {
+  max-width: 100%;
+  height: 100%;
+}
+.section3 article .article-text-container {
+  padding: 18px 17px 19px;
+}
+.section3 article p {
+  font-size: 13px;
+  line-height: 16px;
+  color: #838383;
+}
+.section3 article h4 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  font-size: 20px;
+  line-height: 23px;
+  color: #4E4E4E;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=main.css.map */

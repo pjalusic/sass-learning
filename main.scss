@@ -1,0 +1,117 @@
+$heading1-color: #3E3E3E;
+$heading2-color: #4E4E4E;
+$heading3-color: #606060;
+
+$project-description-color: #838383;
+
+$link-to-section-color: #F72CA9;
+$button-color: #21D4E3;
+
+@import "mixins";
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+[class^="section"] {
+    position: relative;
+}
+
+.section1 {
+    $section1-gradient-start: #FFFFFF;
+    $section1-gradient-end: #EFFAFF;
+
+    background: linear-gradient($section1-gradient-start, $section1-gradient-end);
+    min-height: 400px;
+
+    header {
+        $header-text-color: #707070;
+
+        h3 {
+            color: $header-text-color;
+            font-size: 30px;
+            line-height: 35px;
+            font-weight: 500;
+            position: relative;
+            
+        }
+
+        nav a {
+            color: $header-text-color;
+            font-size: 16px;
+            line-height: 19px;
+            text-decoration: none;
+
+            &:hover {
+                border-bottom: 2px solid $link-to-section-color;
+            }
+        }
+    }
+
+    article a {
+        text-decoration: none;
+        color: #FFFFFF;
+        background: $button-color;
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px 49px;
+        text-align: center;
+    }
+}
+
+.section2 {
+    background: #FFFFFF;
+    // ovo obrisi
+    min-height: 600px;
+}
+
+.section3 {
+    background: #F4F4F4;
+    padding: 68px 176px 115px;
+
+    h2 {
+        font-size: 40px;
+        line-height: 23px;
+        color: $heading2-color;
+        font-weight: 400;
+    }
+
+    .articles-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+
+    article {
+        box-shadow: 1px 1px 2px rgb(199, 199, 199);
+        background: #FFFFFF;
+        max-width: 316px;
+
+        img {
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .article-text-container {
+            padding: 18px 17px 19px;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 16px;
+            color: $project-description-color;
+        }
+
+        h4 {
+            margin-top: 0;
+            margin-bottom: 13px;
+            font-size: 20px;
+            line-height: 23px;
+            color: $heading2-color;
+            font-weight: 500;
+        }
+    }
+}
