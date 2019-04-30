@@ -1,3 +1,5 @@
+$white: #FFFFFF;
+
 $heading2-color: #3E3E3E;
 $heading1-color: #4E4E4E;
 $heading3-color: #606060;
@@ -7,10 +9,10 @@ $project-description-color: #838383;
 $link-to-section-color: #F72CA9;
 $button-color: #21D4E3;
 
-$device-sm: 600px-1;
-$device-md: 768px-1;
-$device-lg: 992px-1;
-$device-xl: 1200px-1;
+$device-sm: 600px;
+$device-md: 768px;
+$device-lg: 992px;
+$device-xl: 1200px;
 
 body {
     margin: 0;
@@ -18,33 +20,28 @@ body {
 }
 
 .container {
-    max-width: $device-lg;
-    padding: 0 50px;
+    max-width: $device-sm;
     margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
 }
 
-@media (max-width: $device-xl) {
+@media screen and (min-width: $device-md) {
+    .container {
+        max-width: $device-md;
+        padding: 0 50px;
+        text-align: left;
+    }   
+}
+
+@media screen and (min-width: $device-lg) {
     .container {
         max-width: $device-lg;
     }   
 }
 
-@media (max-width: $device-lg) {
-    .container {
-        max-width: $device-md;
-    }   
-}
-
-@media (max-width: $device-md) {
-    .container {
-        max-width: $device-sm;
-        text-align: center;
-        padding: 0 20px;
-    }   
-}
-
 header {
-    background-color: #FFFFFF;
+    background-color: $white;
     $header-text-color: #707070;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -64,11 +61,11 @@ header {
     }
     nav {
         a:not(:first-of-type) {
-            margin-left: 60px;
+            margin-left: 20px;
 
-            @media (max-width: $device-md) {
+            @media screen and (min-width: $device-md) {
                 & {
-                    margin-left: 20px;
+                    margin-left: 60px;
                 }   
             }
         }
@@ -86,7 +83,7 @@ header {
 }
 
 .section1 {
-    $section1-gradient-start: #FFFFFF;
+    $section1-gradient-start: $white;
     $section1-gradient-end: #EFFAFF;
 
     background: -webkit-gradient(linear, left top, left bottom, from($section1-gradient-start), to($section1-gradient-end));
@@ -95,7 +92,8 @@ header {
     background: linear-gradient($section1-gradient-start, $section1-gradient-end);
     
     .container {
-        margin-top: 0;
+        padding-top: 100px;
+        flex-direction: column;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -105,9 +103,10 @@ header {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
+        align-content: center;
     }
 
-    div.decriptor {
+    div.description {
         h2 {
             font-size: 50px;
             line-height: 58px;
@@ -126,7 +125,7 @@ header {
 
         a {
             text-decoration: none;
-            color: #FFFFFF;
+            color: $white;
             background: $button-color;
             border-radius: 3px;
             font-size: 14px;
@@ -137,59 +136,52 @@ header {
     }
 
     div.image {
-        -ms-flex-item-align: end;
-            align-self: flex-end;
-        margin: 300px 0 0;
+        margin: 100px 0 -3px;
     }
 
-    @media (max-width: $device-lg) {
+    @media screen and (min-width: $device-lg) {
         .container {
-            margin-top: 100px;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
+            padding-top: 0;
+            flex-direction: row;
         }   
         div.image {
-            -ms-flex-item-align: inherit;
-                -ms-grid-row-align: inherit;
-                align-self: inherit;
-            margin: 100px 0 0;
+            margin-top: 300px;
         }
     }
 }
 
 .section2 {
-    background: #FFFFFF;
+    background: $white;
     color: $heading1-color;
+    padding: 80px 0;
 
     .container {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        flex-direction: column;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
         -ms-flex-pack: distribute;
             justify-content: space-around;
-        padding: 80px 0;
+        align-content: center;
     }
 
     div.image {
         margin: 50px;
     }
 
-    div.descriptor {
+    div.description {
         -webkit-box-flex: 1;
             -ms-flex: 1;
                 flex: 1;
-        margin: 50px 0;
 
         h1 {
             font-size: 40px;
             line-height: 47px;
-            font-weight: 400;
-            margin-bottom: 45px;
+            font-weight: 300;
+            margin: 0 0 45px;
         }
         span {
             font-weight: 900;
@@ -202,28 +194,20 @@ header {
         }
 
         p {
+            max-width: 550px;
             font-size: 16px;
             line-height: 23px;
-            margin: 45px 0 0;
+            text-align: justify;
         }
     }
 
-    @media (max-width: $device-md) {
+    @media screen and (min-width: $device-md) {
         .container {
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                    flex-direction: column;
+            flex-direction: row;
         }
-
-        div.image {
-            margin-bottom: 0;
-        }
-        div.descriptor {
-            margin: 0 20px 50px;
-
+        div.description {
             p {
-                text-align: justify;
+                text-align: left;
             }
         }   
     }
@@ -231,7 +215,7 @@ header {
 
 .section3 {
     background: #F4F4F4;
-    padding: 68px 0 115px;
+    padding: 70px 0 115px;
 
     h2 {
         font-size: 40px;
@@ -244,9 +228,9 @@ header {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
@@ -256,16 +240,23 @@ header {
             flex-wrap: wrap;
     }
 
+    @media screen and (min-width: $device-md) {
+        .articles-container {
+            -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
+        }   
+    }
+
     article {
         -webkit-box-shadow: 1px 1px 2px rgb(199, 199, 199);
                 box-shadow: 1px 1px 2px rgb(199, 199, 199);
-        background: #FFFFFF;
+        background: $white;
         width: 316px;
         margin: 5px;
 
         img {
-            max-width: 100%;
-            height: 100%;
+            width: 100%;
         }
         .article-text-container {
             padding: 18px 17px 19px;
@@ -275,7 +266,7 @@ header {
             line-height: 16px;
             color: $project-description-color;
         }
-        h4 {
+        h5 {
             margin-top: 0;
             margin-bottom: 13px;
             font-size: 20px;
@@ -283,13 +274,5 @@ header {
             color: $heading1-color;
             font-weight: 500;
         }
-    }
-
-    @media (max-width: $device-md) {
-        .articles-container {
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-        }   
     }
 }

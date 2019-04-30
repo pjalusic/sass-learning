@@ -4,26 +4,22 @@ body {
 }
 
 .container {
-  max-width: 991px;
-  padding: 0 50px;
+  max-width: 600px;
   margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
 }
 
-@media (max-width: 1199px) {
+@media screen and (min-width: 768px) {
   .container {
-    max-width: 991px;
+    max-width: 768px;
+    padding: 0 50px;
+    text-align: left;
   }
 }
-@media (max-width: 991px) {
+@media screen and (min-width: 992px) {
   .container {
-    max-width: 767px;
-  }
-}
-@media (max-width: 767px) {
-  .container {
-    max-width: 599px;
-    text-align: center;
-    padding: 0 20px;
+    max-width: 992px;
   }
 }
 header {
@@ -45,11 +41,11 @@ header p {
   font-weight: 500;
 }
 header nav a:not(:first-of-type) {
-  margin-left: 60px;
+  margin-left: 20px;
 }
-@media (max-width: 767px) {
+@media screen and (min-width: 768px) {
   header nav a:not(:first-of-type) {
-    margin-left: 20px;
+    margin-left: 60px;
   }
 }
 header nav a {
@@ -69,7 +65,8 @@ header nav a:hover {
   background: linear-gradient(#FFFFFF, #EFFAFF);
 }
 .section1 .container {
-  margin-top: 0;
+  padding-top: 100px;
+  flex-direction: column;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,22 +76,23 @@ header nav a:hover {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  align-content: center;
 }
-.section1 div.decriptor h2 {
+.section1 div.description h2 {
   font-size: 50px;
   line-height: 58px;
   color: #3E3E3E;
   font-weight: 400;
   margin-bottom: 8px;
 }
-.section1 div.decriptor h1 {
+.section1 div.description h1 {
   margin: 8px 0 40px;
   font-size: 26px;
   line-height: 30px;
   color: #606060;
   font-weight: 400;
 }
-.section1 div.decriptor a {
+.section1 div.description a {
   text-decoration: none;
   color: #FFFFFF;
   background: #21D4E3;
@@ -104,91 +102,76 @@ header nav a:hover {
   padding: 10px 49px;
 }
 .section1 div.image {
-  -ms-flex-item-align: end;
-  align-self: flex-end;
-  margin: 300px 0 0;
+  margin: 100px 0 -3px;
 }
-@media (max-width: 991px) {
+@media screen and (min-width: 992px) {
   .section1 .container {
-    margin-top: 100px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    padding-top: 0;
+    flex-direction: row;
   }
   .section1 div.image {
-    -ms-flex-item-align: inherit;
-    -ms-grid-row-align: inherit;
-    align-self: inherit;
-    margin: 100px 0 0;
+    margin-top: 300px;
   }
 }
 
 .section2 {
   background: #FFFFFF;
   color: #4E4E4E;
+  padding: 80px 0;
 }
 .section2 .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  padding: 80px 0;
+  align-content: center;
 }
 .section2 div.image {
   margin: 50px;
 }
-.section2 div.descriptor {
+.section2 div.description {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin: 50px 0;
 }
-.section2 div.descriptor h1 {
+.section2 div.description h1 {
   font-size: 40px;
   line-height: 47px;
-  font-weight: 400;
-  margin-bottom: 45px;
+  font-weight: 300;
+  margin: 0 0 45px;
 }
-.section2 div.descriptor span {
+.section2 div.description span {
   font-weight: 900;
 }
-.section2 div.descriptor span.link-color {
+.section2 div.description span.link-color {
   color: #F72CA9;
 }
-.section2 div.descriptor span.button-color {
+.section2 div.description span.button-color {
   color: #21D4E3;
 }
-.section2 div.descriptor p {
+.section2 div.description p {
+  max-width: 550px;
   font-size: 16px;
   line-height: 23px;
-  margin: 45px 0 0;
+  text-align: justify;
 }
-@media (max-width: 767px) {
+@media screen and (min-width: 768px) {
   .section2 .container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    flex-direction: row;
   }
-  .section2 div.image {
-    margin-bottom: 0;
-  }
-  .section2 div.descriptor {
-    margin: 0 20px 50px;
-  }
-  .section2 div.descriptor p {
-    text-align: justify;
+  .section2 div.description p {
+    text-align: left;
   }
 }
 
 .section3 {
   background: #F4F4F4;
-  padding: 68px 0 115px;
+  padding: 70px 0 115px;
 }
 .section3 h2 {
   font-size: 40px;
@@ -200,9 +183,9 @@ header nav a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -210,6 +193,13 @@ header nav a:hover {
   align-content: space-around;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .section3 .articles-container {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
 }
 .section3 article {
   -webkit-box-shadow: 1px 1px 2px #c7c7c7;
@@ -219,8 +209,7 @@ header nav a:hover {
   margin: 5px;
 }
 .section3 article img {
-  max-width: 100%;
-  height: 100%;
+  width: 100%;
 }
 .section3 article .article-text-container {
   padding: 18px 17px 19px;
@@ -230,20 +219,13 @@ header nav a:hover {
   line-height: 16px;
   color: #838383;
 }
-.section3 article h4 {
+.section3 article h5 {
   margin-top: 0;
   margin-bottom: 13px;
   font-size: 20px;
   line-height: 23px;
   color: #4E4E4E;
   font-weight: 500;
-}
-@media (max-width: 767px) {
-  .section3 .articles-container {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */
