@@ -53,9 +53,18 @@ header nav a {
   font-size: 16px;
   line-height: 19px;
   text-decoration: none;
+  position: relative;
 }
-header nav a:hover {
-  border-bottom: 2px solid #F72CA9;
+header nav a:hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+  top: 19px;
+  width: 45px;
+  border-top: 2px solid #F72CA9;
 }
 
 .section1 {
