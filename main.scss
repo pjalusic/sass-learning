@@ -46,9 +46,15 @@ body {
 header {
     background-color: #FFFFFF;
     $header-text-color: #707070;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     p {
         color: $header-text-color;
@@ -83,13 +89,22 @@ header {
     $section1-gradient-start: #FFFFFF;
     $section1-gradient-end: #EFFAFF;
 
+    background: -webkit-gradient(linear, left top, left bottom, from($section1-gradient-start), to($section1-gradient-end));
+    background: -webkit-linear-gradient($section1-gradient-start, $section1-gradient-end);
+    background: -o-linear-gradient($section1-gradient-start, $section1-gradient-end);
     background: linear-gradient($section1-gradient-start, $section1-gradient-end);
     
     .container {
         margin-top: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 
     div.decriptor {
@@ -122,17 +137,23 @@ header {
     }
 
     div.image {
-        align-self: flex-end;
+        -ms-flex-item-align: end;
+            align-self: flex-end;
         margin: 300px 0 0;
     }
 
     @media (max-width: $device-lg) {
         .container {
             margin-top: 100px;
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
         }   
         div.image {
-            align-self: inherit;
+            -ms-flex-item-align: inherit;
+                -ms-grid-row-align: inherit;
+                align-self: inherit;
             margin: 100px 0 0;
         }
     }
@@ -143,9 +164,14 @@ header {
     color: $heading1-color;
 
     .container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
         padding: 80px 0;
     }
 
@@ -154,7 +180,9 @@ header {
     }
 
     div.descriptor {
-        flex: 1;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
         margin: 50px 0;
 
         h1 {
@@ -182,7 +210,10 @@ header {
 
     @media (max-width: $device-md) {
         .container {
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
         }
 
         div.image {
@@ -210,15 +241,24 @@ header {
     }
 
     .articles-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        align-content: space-around;
-        flex-wrap: wrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -ms-flex-line-pack: distribute;
+            align-content: space-around;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
     }
 
     article {
-        box-shadow: 1px 1px 2px rgb(199, 199, 199);
+        -webkit-box-shadow: 1px 1px 2px rgb(199, 199, 199);
+                box-shadow: 1px 1px 2px rgb(199, 199, 199);
         background: #FFFFFF;
         width: 316px;
         margin: 5px;
@@ -247,10 +287,9 @@ header {
 
     @media (max-width: $device-md) {
         .articles-container {
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
         }   
-        h2 {
-            
-        }
     }
 }
